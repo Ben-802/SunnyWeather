@@ -16,7 +16,7 @@ object SunnyWeatherNetwork {
         weatherService.getDailyWeather(lng, lat).await()
 
     suspend fun getRealtimeWeather(lng: String, lat: String) =
-        weatherService.getDailyWeather(lng, lat).await()
+        weatherService.getRealtimeWeather(lng, lat).await()
 
     private val placeService = ServiceCreator.create<PlaceService>()
 

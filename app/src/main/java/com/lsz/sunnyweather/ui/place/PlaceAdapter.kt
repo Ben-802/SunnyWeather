@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.lsz.sunnyweather.R
 import com.lsz.sunnyweather.logic.model.Place
@@ -21,7 +20,7 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.place_item,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.place_item, parent, false)
         val holder = ViewHolder(view)
         holder.itemView.setOnClickListener {
             val position = holder.adapterPosition

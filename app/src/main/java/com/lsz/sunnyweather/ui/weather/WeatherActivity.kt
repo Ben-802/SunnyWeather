@@ -85,7 +85,7 @@ class WeatherActivity : AppCompatActivity() {
     private fun showWeatherInfo(weather: Weather) {
         placeName.text = viewModel.placeName
         val realtime = weather.realtime
-        val daily = weather.daily
+        val daily = weather.dailyResponse
 
         val currentTempText = "${realtime.temperature.toInt()} .C"
         currentTemp.text = currentTempText
@@ -98,7 +98,7 @@ class WeatherActivity : AppCompatActivity() {
         val days = daily.skycon.size
         for (i in 0 until days) {
             val skycon = daily.skycon[i]
-            val temperature = daily.temperature[i]
+            val temperature = daily.temeperature[i]
             val view = LayoutInflater.from(this).inflate(R.layout.forecast_item,forecastLayout, false)
             val dateInfo = view.findViewById(R.id.dateInfo) as TextView
             val skyIcon = view.findViewById(R.id.skyIcon) as ImageView
